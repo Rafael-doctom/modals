@@ -1,3 +1,10 @@
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 
 import { LockClosedIcon } from '@heroicons/react/solid'
 
@@ -15,9 +22,9 @@ export default function Login() {
             <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Faça login em sua conta</h2>
             <p className="mt-2 text-center text-sm text-gray-600">
               ou{'  '}
-              <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+              <Link to="/" className="font-medium text-indigo-600 hover:text-indigo-500">
                 comece seu teste gratuito de 14 dias
-              </a>
+              </Link>
             </p>
           </div>
           <form className="mt-8 space-y-6" action="#" method="POST">
