@@ -1,41 +1,28 @@
 import React, { useState } from 'react';
 
-import Modal1 from './components/modal1';
+import Login from './pages';
 
 function App() {
 
-  const [modal1, setModal1] = useState(false);
-  const [modal2, setModal2] = useState(false);
+  const [modalLogin, setModalLogin] = useState(false);
+
+  const [stateLogin, setStateLogin] = useState(false)
 
   const handleClick1 = (event) => {
     event.preventDefault()
-    setModal1(!modal1)
+    setModalLogin(!modalLogin)
+    setStateLogin(!stateLogin)
   };
 
-  const handleClick2 = (event) => {
-    event.preventDefault()
-    setModal2(!modal2)
-  };
-
+  
   return (
     <>
-      <div style={{ textAlign: 'center', paddingTop: '100px' }}>
-        <button onClick={handleClick1}>Modal1</button>
-        <button onClick={handleClick2}>Modal2</button>
-        <button>Modal3</button>
-        <button>Modal4</button>
-        <button>Modal5</button>
-        <button>Modal6</button>
-        <button>Modal7</button>
-        <button>Modal8</button>
-        <button>Modal9</button>
-        <button>Modal10</button>
+      <div style={{ textAlign: 'center', paddingTop: '120px' }}>
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={handleClick1}>
+          {stateLogin ? 'x' : 'fazer login'}
+        </button>
       </div>
-
-      {modal1 ? <Modal1 /> : null }
-
-      {modal2 ?<Modal1 />: null }
-
+      {modalLogin ? <Login /> : null}
     </>
   );
 };
